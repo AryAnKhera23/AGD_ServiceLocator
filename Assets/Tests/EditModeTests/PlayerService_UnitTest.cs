@@ -11,9 +11,7 @@ public class PlayerService_UnitTest
     [SetUp]
     public void Setup()
     {
-        PlayerScriptableObject playerSO = CreateDummyPlayerSO();
-        playerService = new GameObject().AddComponent<PlayerService>();
-        playerService.playerScriptableObject = playerSO;
+        PlayerScriptableObject playerSO = CreateDummyPlayerSO();    
     }
 
     private PlayerScriptableObject CreateDummyPlayerSO()
