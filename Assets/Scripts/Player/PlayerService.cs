@@ -10,8 +10,6 @@ namespace ServiceLocator.Player
 {
     public class PlayerService
     {
-        
-
         private ProjectilePool projectilePool;
         private PlayerScriptableObject playerScriptableObject;
         private List<MonkeyController> activeMonkeys;
