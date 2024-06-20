@@ -18,9 +18,9 @@ namespace ServiceLocator.Map
         public MapService(MapScriptableObject mapScriptableObject)
         { 
             this.mapScriptableObject = mapScriptableObject;
-            SubscribeToEvents();
             tileOverlay = Object.Instantiate(mapScriptableObject.TileOverlay).GetComponent<SpriteRenderer>();
             ResetTileOverlay();
+            SubscribeToEvents();
         }
 
         private void SubscribeToEvents() => GameService.Instance.eventService.OnMapSelected.AddListener(LoadMap);

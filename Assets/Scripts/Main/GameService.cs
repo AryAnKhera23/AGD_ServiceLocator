@@ -28,19 +28,15 @@ public class GameService : GenericMonoSingleton<GameService>
     [SerializeField] private AudioSource audioEffects;
     [SerializeField] private AudioSource backgroundMusic;
 
-
-    protected override void Awake()
-    {
-        eventService = new EventService();
-        base.Awake();
-        eventService.Awake();
-    }
     private void Start()
     {
         playerService = new PlayerService(playerScriptableObject);
+        eventService = new EventService();
+        UIService.SubscribeToEvents();
         soundService = new SoundService(soundScriptableObject, audioEffects, backgroundMusic);
         mapService = new MapService(mapScriptableObject);
         waveService = new WaveService(waveScriptableObject);
+        
     }
 
     private void Update()
